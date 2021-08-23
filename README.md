@@ -1,13 +1,13 @@
-# omxplayer-controll
+# omxplayer-layered
 
-Controll omxplayer with native dbus
+Layered controll omxplayer with native dbus
 
 
 ## Installation
 
 
 ```shell
-npm install omxplayer-controll [--save]
+npm install omxplayer-layered [--save]
 ```
 
 ## Usage
@@ -16,8 +16,9 @@ npm install omxplayer-controll [--save]
 Short example running a video getting the status every 5 seconds and listeing to the aboutToFinis signal
 
 ```js
-var omxp = require('omxplayer-controll');
+var omxp = require('omxplayer-layered');
 var opts = {
+    'layer': '1',
     'audioOutput': 'hdmi', //  'hdmi' | 'local' | 'both'
     'blackBackground': false, //false | true | default: true
     'disableKeys': true, //false | true | default: false
@@ -98,5 +99,5 @@ omxp.setAspectMode(aspect, function(err){});
 When reporting an issue please add the following information:
   - OS version `cat /etc/os-release`
   - Node version `node --version`
-  - omxplayer-controll version `npm ls | grep omxplayer-controll`
+  - omxplayer-layered version `npm ls | grep omxplayer-layered`
   - A detailed explanation of the issue and/or output.
