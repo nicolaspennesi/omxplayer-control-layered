@@ -1,6 +1,6 @@
 # omxplayer-layered
 
-Layered controll omxplayer with native dbus
+An library for Node.js allowing you to have multiple omxplayer instances and control them in-process via the low-latency interprocess communication protocol, D-Bus.
 
 
 ## Installation
@@ -16,7 +16,7 @@ npm install omxplayer-layered [--save]
 Short example running a video getting the status every 5 seconds and listeing to the aboutToFinis signal
 
 ```js
-var omxp = require('omxplayer-layered');
+var OmxPlayer = require('omxplayer-layered');
 var opts = {
     'layer': '1',
     'audioOutput': 'hdmi', //  'hdmi' | 'local' | 'both'
@@ -28,7 +28,9 @@ var opts = {
     'startAt': 0, //default: 0
     'startVolume': 0.8 //0.0 ... 1.0 default: 1.0
 };
-omxp.open('path_to_file', opts);
+var omxp = new OmxPlayer(opts);
+
+omxp.open('path_to_file');
 omxp.on('changeStatus',function(status){
     console.log('Status',status);
 });
@@ -43,12 +45,13 @@ omxp.on('aboutToFinish',function(){
 ## List of available commands
 ### Open single file
 ```js
-omxp.open('path_to_file', opts);
+omxp.open('path_to_file');
 ```
 
 ### Basic commands
 ```js
 omxp.playPause(function(err){});
+omxp.play(function(err){});
 omxp.pause(function(err){});
 omxp.getStatus(function(err, status){}); //Playing, Paused,
 omxp.getDuration(function(err, duration){});
