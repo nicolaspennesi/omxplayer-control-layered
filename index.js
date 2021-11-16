@@ -34,6 +34,12 @@ class OmxPlayer extends EventEmitter {
     });
   };
 
+  play(cb) { //checked
+    this.omxs.method('Play', function(err) {
+        return typeof cb === 'function' ? cb(err) : {};
+    });
+  };
+
   pause(cb) { //checked IDEM playPause
     this.omxs.method('Pause', (err) => {
       return typeof cb === 'function' ? cb(err) : {};
@@ -272,11 +278,6 @@ module.exports = OmxPlayer;
 // module.exports.getRate = function(cb) { //not working
 //     this.omxs.propertyRead('Rate', function(err, vol) {
 //         cb(err, vol);
-//     });
-// };
-// module.exports.play = function(cb) { //not working
-//     this.omxs.method('Play', function(err) {
-//         return typeof cb === 'function' ? cb(err) : {};
 //     });
 // };
 //=========================EN OF NOT WORKING FUNCTIONS
