@@ -1,11 +1,11 @@
 {
-  "name": "omxplayer-layered",
+  "name": "omxplayer-control-layered",
   "version": "0.0.1",
-  "description": "Raspberry Pi omxplayer layered controll using dbus-native",
+  "description": "Raspberry Pi omxplayer layered control using dbus-native",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amamei/omxplayer-controll"
+    "url": "https://github.com/nicolaspennesi/omxplayer-control-layered"
   },
   "keywords": [
     "Raspberry",
@@ -16,9 +16,9 @@
   "author": "Winston Wright <winstonwp@gmail.com> (https://github.com/winstonwp/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amamei/omxplayer-controll/issues"
+    "url": "https://github.com/nicolaspennesi/omxplayer-control-layered/issues"
   },
-  "homepage": "https://github.com/amamei/omxplayer-controll#readme",
+  "homepage": "https://github.com/nicolaspennesi/omxplayer-control-layered#readme",
   "dependencies": {
     "dbus-native": "^0.2.0"
   },

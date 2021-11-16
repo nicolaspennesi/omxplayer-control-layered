@@ -1,4 +1,4 @@
-# omxplayer-layered
+# omxplayer-control-layered
 
 An library for Node.js allowing you to have multiple omxplayer instances and control them in-process via the low-latency interprocess communication protocol, D-Bus.
 
@@ -7,7 +7,7 @@ An library for Node.js allowing you to have multiple omxplayer instances and con
 
 
 ```shell
-npm install omxplayer-layered [--save]
+npm install --save omxplayer-control-layered
 ```
 
 ## Usage
@@ -16,7 +16,7 @@ npm install omxplayer-layered [--save]
 Short example running a video getting the status every 5 seconds and listeing to the aboutToFinis signal
 
 ```js
-var OmxPlayer = require('omxplayer-layered');
+var OmxPlayer = require('omxplayer-control-layered');
 var opts = {
     'layer': '1',
     'audioOutput': 'hdmi', //  'hdmi' | 'local' | 'both'
@@ -102,5 +102,5 @@ omxp.setAspectMode(aspect, function(err){});
 When reporting an issue please add the following information:
   - OS version `cat /etc/os-release`
   - Node version `node --version`
-  - omxplayer-layered version `npm ls | grep omxplayer-layered`
+  - omxplayer-control-layered version `npm ls | grep omxplayer-control-layered`
   - A detailed explanation of the issue and/or output.
